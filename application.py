@@ -50,7 +50,7 @@ def mfanag():
       faurl = "http://" + domain + ".slack.com/account/settings/2fa_choose"
 
       for user in users:
-        if not user.get('is_bot') and not user.get('has_2fa') and user.get('name') == "emaland":
+        if not user.get('is_bot') and not user.get('has_2fa'):
           print user.get('name')
           print sc.api_call("chat.postMessage", channel=user.get('id'), text='You currently do not have Multifactor Authentication configured.\n\nPlease enable Multifactor Authentication here: ' + faurl)
 
